@@ -19,9 +19,10 @@ export default function SigninPage() {
           alignItems: "center",
           width: "400px",
           margin: "0 auto",
-          marginTop: "180px",
+          marginTop: "130px",
         }}
       >
+        <h1 style={{ color: "#30a7a0" }}>Área do aluno</h1>
         <ContainerAuth>
           <StyledForm className="signinForm">
             <h3>Login</h3>
@@ -44,7 +45,12 @@ export default function SigninPage() {
               />
             </StyledContainerDiv>
 
-            <ButtonAuth text="Entrar" />
+            <ButtonAuth
+              onClick={() => {
+                router.push("/dashboard");
+              }}
+              text="Entrar"
+            />
           </StyledForm>
         </ContainerAuth>
       </div>

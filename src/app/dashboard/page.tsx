@@ -1,18 +1,19 @@
 "use client";
-import { useRouter } from "next/navigation";
+import MenuNav from "@/Components/Menu/Menu";
+import { ContainerNav, ContainerImagem, GlobalStyle, Container } from "./style";
 
 export default function DashboardPage() {
-  const router = useRouter();
-
   return (
     <>
-      <button
-        onClick={() => {
-          router.push("/signin");
-        }}
-      >
-        Ir login
-      </button>
+      <GlobalStyle />
+      <ContainerNav>
+        <MenuNav></MenuNav>
+      </ContainerNav>
+      <ContainerImagem></ContainerImagem>
+      <Container>
+        <div>Conteúdo parte 1</div>
+        <div>Conteúdo parte 2</div>
+      </Container>
     </>
   );
 }
