@@ -29,4 +29,13 @@ export const ContainerImagem = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  margin: auto;
+  width: 90%;
+  margin-top: 30px;
+`;
+
+export const StyledTexts = styled.p`
+  color: #30a7a0;
+  font-size: 20px;
+  font-weight: 500;
 `;
