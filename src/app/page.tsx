@@ -1,13 +1,12 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import React from 'react';
+import MessageBoard from '../app/message/page';
 
 export default function Home() {
-  const router = useRouter();
+  const userType = 'professor';  // ou 'student'
 
-  useEffect(() => {
-    router.push("/signin");
-  });
-
-  return <></>;
+  return (
+    <div>
+      <MessageBoard userType={userType} />
+    </div>
+  );
 }

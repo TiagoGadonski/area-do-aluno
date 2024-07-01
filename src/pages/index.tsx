@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageBoard from '../app/components/MessageBoard';
+import MessageBoard from '../app/message/page';
 
 export default function Home() {
   const userType = 'professor';  // ou 'student'

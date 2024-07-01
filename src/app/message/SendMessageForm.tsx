@@ -30,7 +30,6 @@ const SendMessageForm: React.FC<SendMessageFormProps> = ({ closeForm }) => {
         <h2>Criar nova mensagem</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
           <label>
-            Destinatário:
             <input
               type="text"
               value={recipient}
@@ -40,11 +39,11 @@ const SendMessageForm: React.FC<SendMessageFormProps> = ({ closeForm }) => {
             />
           </label>
           <label>
-            Digite sua mensagem...
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className={styles.textarea}
+              placeholder='Digite sua mensagem'
             />
           </label>
           <div className={styles.buttons}>

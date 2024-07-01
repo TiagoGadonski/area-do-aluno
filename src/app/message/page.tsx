@@ -1,7 +1,10 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import feather from 'feather-icons';
 import styles from '../styles/MessageBoard.module.css';
 import SendMessageForm from './SendMessageForm'; 
+import { ContainerImagem, ContainerNav, GlobalStyle } from '../dashboard/style';
+import MenuNav from '@/Components/Menu/Menu';
 
 interface Message {
   id: number;
@@ -41,19 +44,28 @@ const MessageBoard: React.FC<Props> = ({ userType }) => {
   };
 
   return (
-    <div className={styles.container}>
-      {messages.map(message => (
-        <div key={message.id} className={styles.message}>
-          <i className="icon" dangerouslySetInnerHTML={{ __html: feather.icons['user'].toSvg() }}></i>
-          <div className={styles.content}>
-            <div className={styles.timestamp}>{message.timestamp}</div>
-            <p className={styles.text}>{message.content}</p>
+    <>
+    <GlobalStyle />
+      <ContainerNav>
+        <MenuNav></MenuNav>
+      </ContainerNav>
+      
+
+      <div className={styles.container}>
+        {messages.map(message => (
+          <div key={message.id} className={styles.message}>
+            <i className="icon" dangerouslySetInnerHTML={{ __html: feather.icons['user'].toSvg() }}></i>
+            <div className={styles.content}>
+              <div className={styles.timestamp}>{message.timestamp}</div>
+              <p className={styles.text}>{message.content}</p>
+            </div>
           </div>
-        </div>
-      ))}
-      <button onClick={handleNewMessage} className={styles.newMessageButton}>Nova mensagem</button>
-      {showForm && <SendMessageForm closeForm={closeForm} />}
-    </div>
+        ))}
+        <button onClick={handleNewMessage} className={styles.newMessageButton}>Nova mensagem</button>
+        {showForm && <SendMessageForm closeForm={closeForm} />}
+      </div>
+      
+    </>
   );
 };
 
